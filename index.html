@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone-Hunting</title>
+    <!-- Tailwind & DaisyUi -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-6xl font-bold text-center my-10">Phone <span class="text-cyan-500">Hunting</span></h1>
+    </header>
+    <main class="container mx-auto my-10">
+
+        <section class="p-4 m-4 text-center">
+            <input id="search-filed" type="text" placeholder="Search..." class="input input-bordered w-full max-w-xs" />
+            <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+        </section>
+        
+        <!-- search result -->
+        <section>
+            <!-- Loader or spenner -->
+            <div id="loading-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
+            </div>
+
+            <!-- NO result found -->
+            <div id="no-result-found" class="hidden text-center my-12">
+                <h2 class="text-3xl font-semibold">No result Found</h2>
+                <h2 class="text-2xl font-semibold">Please valid keyword search</h2>
+            </div>
+
+            <!-- show all button -->
+            <div id="show-all-container" class="hidden text-center my-8">
+                <button onclick="handleShowAll()" class="btn btn-accent">Show All</button>
+            </div>
+        </section>
+
+        <!-- show details model -->
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="">open modal</button> -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="show-detail-phone-name" class="font-bold text-lg"></h3>
+                <div id="show-detail-container">
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/phone.js"></script>
+</body>
+
+</html>
